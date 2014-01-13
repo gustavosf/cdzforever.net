@@ -17,14 +17,14 @@ BASE_DIR = os.path.dirname(__file__)
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'j-k*i#!nmq@7%@rbji56!%l@492z33lte*aa$zo*=m9^6fyn$u'
+SECRET_KEY = 's3cr3t-k3y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'compressor',
     # apps
     'apps.core',
-    'apps.midia',
+    'apps.media',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,9 +99,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt_BR'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -114,3 +114,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# MEGA
+
+MEGA = {
+    'email': '',
+    'password': '',
+    'path': '~/Downloads',
+    'exts': ('.mkv', '.avi', '.mp4'),
+}
+
+try:
+    from config.local_settings import *
+except ImportError:
+    pass

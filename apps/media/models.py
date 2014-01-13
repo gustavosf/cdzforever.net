@@ -23,10 +23,14 @@ class Serie(models.Model):
 
 
 class Episodio(Timestamp):
+    serie = models.ForeignKey(Serie)
+
     numero = models.IntegerField()
     titulo = models.CharField(max_length=90)
-    serie = models.ForeignKey(Serie)
+    arquivo = models.CharField(max_length=255)
+    tamanho = models.IntegerField()
     link = models.URLField()
+    legenda = models.URLField(blank=True, null=True)
     downloads = models.IntegerField(default=0)
 
     def __unicode__(self):
