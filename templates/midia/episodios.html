@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Séries{% endblock %}
+
+{% block content %}
+    <h1>{{ object_list.nome }}</h1>
+    <ul>
+    {% for episodio in object_list.episodios_set %}
+        <li>
+            <a href="">{{ episodio }}</a>
+        </li>
+    {% empty %}
+        <p>Não existem episódios para essa série.</p>
+    {% endfor %}
+    </ul>
+{% endblock %}

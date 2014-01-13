@@ -1,0 +1,9 @@
+django
+django_compressor
+south
+
+psycopg2
+gunicorn
+gevent
+
+mega.py
