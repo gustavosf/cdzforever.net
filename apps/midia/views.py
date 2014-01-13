@@ -17,7 +17,6 @@ class EpisodiosView(ListView):
     queryset = None
 
     def dispatch(self, request, *args, **kwargs):
-        print kwargs.get('serie')
         self.queryset = get_object_or_404(Serie, pk=kwargs.get('serie'))
 
         return super(EpisodiosView, self).dispatch(request, *args, **kwargs)
