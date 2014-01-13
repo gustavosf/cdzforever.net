@@ -1,4 +1,2 @@
-cdzforever.net
+CDZForever Website
 ==============
-
-CdzForever.net Website
