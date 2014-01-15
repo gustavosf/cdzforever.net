@@ -1,10 +1,22 @@
+{% load staticfiles %}
+{% load compress %}
+
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    {% compress css %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+    {% endcompress %}
 </head>
 <body>
     {% block content %}{% endblock %}
+
+    {% compress js %}
+        <script src="{% static 'js/jquery-2.0.3.js' %}"></script>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+    {% endcompress %}
 </body>
 </html>

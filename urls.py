@@ -5,6 +5,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'', include('apps.core.urls')),
-    url(r'^midia/', include('apps.midia.urls')),
+    url(r'^media/', include('apps.media.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )

@@ -2,11 +2,11 @@
 
 from django.conf.urls import patterns, url
 
-from .views import SeriesView, EpisodiosView
+from .views import CategoriaView, LinkView
 
 urlpatterns = patterns(
     '',
 
-    url(r'^$', SeriesView.as_view(), name='series'),
-    url(r'episodios/(?P<serie>\d+)/$', EpisodiosView.as_view(), name='episodios'),
+    url(r'^$', CategoriaView.as_view(), name='categoria'),
+    url(r'links/(?P<serie>\d+)/$', LinkView.as_view(), name='links'),
 )

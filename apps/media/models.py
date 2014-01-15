@@ -4,26 +4,27 @@ from django.db import models
 
 from ..core.models import Timestamp
 
-CATEGORIAS = (
+TIPOS = (
     ('Anime', 'Anime'),
-    ('Mangá', 'Mangá'),
+    ('Manga', 'Mangá'),
     ('OVA', 'OVA'),
     ('Filme', 'Filme'),
     ('Jogos', 'Jogos'),
     ('OST', 'OST'),
+    ('Outros', 'Outros'),
 )
 
 
-class Serie(models.Model):
+class Categoria(models.Model):
     nome = models.CharField(max_length=90)
-    categoria = models.CharField(max_length=90, choices=CATEGORIAS)
+    tipo = models.CharField(max_length=90, choices=TIPOS)
 
     def __unicode__(self):
-        return "%s - %s" % (self.categoria, self.nome)
+        return "%s - %s" % (self.tipo, self.nome)
 
 
-class Episodio(Timestamp):
-    serie = models.ForeignKey(Serie)
+class Link(Timestamp):
+    categoria = models.ForeignKey(Categoria)
 
     numero = models.IntegerField()
     titulo = models.CharField(max_length=90)

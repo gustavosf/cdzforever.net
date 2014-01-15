@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Séries{% endblock %}
+
+{% block content %}
+    <h1>Categorias</h1>
+
+    {% regroup object_list by categoria as series_by_categoria %}
+    {% for serie in series_by_categoria %}
+        <ul>{{ serie.grouper }}
+            {% for item in serie.list %}
+                <li>{{ series_by_categoria.grouper }}
+                    <a href="{% url 'links' item.pk %}">{{ item.nome }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}
