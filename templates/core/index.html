@@ -3,5 +3,50 @@
 {% block title %}CDZForever{% endblock %}
 
 {% block content %}
-    <a href="{% url 'series' %}">Downloads</a>
+    <section role="stats" class="row">
+        <article class="col-md-4 stats">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>Links</h4>
+                    <h2>666</h2>
+                </div>
+            </div>
+        </article>
+        <article class="col-md-4 stats">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>Espaço em Disco</h4>
+                    <h2>666 GB</h2>
+                </div>
+            </div>
+        </article>
+        <article class="col-md-4 stats">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>Downloads</h4>
+                    <h2>6.666.666</h2>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Atualizações</div>
+        <div class="panel-body">
+            <p>Propositalmente deixei de fazer backup do blog para me forçar a fazer algo melhor,
+            aproveitando o embalo migrei todos os arquivo para o Mega.</p>
+        </div>
+    </div>
+
+    <div class="fb-like-box" data-href="http://www.facebook.com/CDZForever" data-width="1140" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=477138722407788";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 {% endblock %}

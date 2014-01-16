@@ -3,16 +3,26 @@
 {% block title %}Séries{% endblock %}
 
 {% block content %}
-    <h1>Categorias</h1>
+    <div class="panel panel-primary">
+        <div class="panel-heading">Downloads</div>
 
-    {% regroup object_list by categoria as series_by_categoria %}
-    {% for serie in series_by_categoria %}
-        <ul>{{ serie.grouper }}
-            {% for item in serie.list %}
-                <li>{{ series_by_categoria.grouper }}
-                    <a href="{% url 'links' item.pk %}">{{ item.nome }}</a>
+        <div class="panel-body">
+            {% regroup object_list|dictsort:'tipo' by tipo as serie_list %}
+            <ul>
+            {% for serie in serie_list %}
+                <li>{{ serie.grouper }}
+                    <ul>
+                        {% for item in serie.list %}
+                            <li>{{ item.nome }}</li>
+                        {% endfor %}
+                    </ul>
                 </li>
             {% endfor %}
-        </ul>
-    {% endfor %}
+            </ul>
+        </div>
+    </div>
 {% endblock %}
+
+
+
+

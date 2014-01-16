@@ -1,0 +1,6 @@
+body {
+  background: #eeeeee;
+}
+section[role=stats] article {
+  background: red;
+}
